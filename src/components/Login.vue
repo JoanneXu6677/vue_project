@@ -1,9 +1,7 @@
 <template>
   <div class="login_container">
     <div class="login_box">
-      <div class="avatar_box">
-        <img src="../assets/logo.png" alt />
-      </div>
+      <div class="avatar_box">Login</div>
       <!-- 登录 -->
       <el-form ref="loginFormRef" class="login_form" :model="loginForm" :rules="loginFormRules">
         <el-form-item prop="username">
@@ -82,11 +80,7 @@ export default {
 <style lang="less" scoped>
 .login_container {
   background: rgb(112, 199, 151);
-  background-image: linear-gradient(
-    to right,
-    rgba(112, 199, 151, 0.5),
-    skyblue
-  );
+  background-image: linear-gradient(to right, #fffcdc, #d9a7c7);
   height: 100%;
   position: relative;
 }
@@ -101,20 +95,18 @@ export default {
   transform: translate(-50%, -50%);
   box-shadow: 0 0 10px #ddd;
   .avatar_box {
-    height: 130px;
-    width: 130px;
-    border-radius: 50%;
+    height: 100px;
+    width: 260px;
+    border-radius: 5%;
     padding: 10px;
     box-shadow: 0 0 10px #ddd;
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background-color: #eee;
-    }
+    font-size: 60px;
+    font-weight: bolder;
+    text-align: center;
+    color: #dc143c;
   }
 }
 .btn {

@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../components/Login.vue'
 import Home from '../components/Home.vue'
+import Welcome from '../components/Wecome.vue'
+import Users from '../components/user/Users.vue'
 Vue.use(VueRouter)
 
 
@@ -14,9 +16,18 @@ const router = new VueRouter({
             path: '/login',
             component: Login
         },
+
         {
             path: '/Home',
-            component: Home
+            component: Home,
+            redirect: '/welcome',
+            children: [{
+                path: '/welcome',
+                component: Welcome
+            }, {
+                path: '/users',
+                component: Users
+            }]
         }
     ]
 })
@@ -31,5 +42,11 @@ router.beforeEach((to, from, next) => {
     if (!token) return next('/login')
     next();
 })
+
+// 解决路由重复问题
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+    return originalPush.call(this, location).catch(err => err)
+}
 
 export default router

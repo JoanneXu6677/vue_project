@@ -7,6 +7,12 @@ import '../src/assets/css/global.css'
 
 //挂载
 import axios from 'axios'
+axios.interceptors.request.use(config => {
+    // 为请求头添加token验证的authorization字段
+    config.headers.Authorization = window.sessionStorage.getItem('token')
+    console.log(config);
+    return config;
+})
 Vue.prototype.$http = axios
     //配置请求根路径
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
