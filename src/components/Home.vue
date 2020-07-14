@@ -3,7 +3,7 @@
     <!-- 头部 -->
     <el-header class="home_header">
       <div>Leave管理系统</div>
-      <el-button type="info" @click="logout">退出</el-button>
+      <el-button size="mini" type="danger" @click="logout">退出</el-button>
     </el-header>
     <!-- 主题部分 -->
     <el-container>
@@ -111,5 +111,7 @@ export default {
 }
 .span_left {
   margin-left: 10px;
+}
+.el-button {
 }
 </style>
