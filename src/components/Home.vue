@@ -2,7 +2,7 @@
   <el-container class="home_container">
     <!-- 头部 -->
     <el-header class="home_header">
-      <div>某某后台管理系统</div>
+      <div>Leave管理系统</div>
       <el-button type="info" @click="logout">退出</el-button>
     </el-header>
     <!-- 主题部分 -->
