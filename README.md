@@ -1,21 +1,23 @@
 # vue_project Leave管理系统
+项目介绍：基于Leave小程序的后台管理系统，有分配用户权限，对用户发布的信息进行修改等功能，以便更好的管理
+Leave小程序内容。
+技术栈：Vue+Vue-Router+Element-UI+Axios
 
-## Project setup
+## 安装依赖包
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 将项目跑起来
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 将项目打包
 ```
 npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+项目编写的初衷：因为有做一个小程序项目，想将这个作为后台管理。
+小程序项目是以学生为服务对象的二手信息平台，那么这个上面会出现很多消息，为了更好的管理上面呈现的内容，传播咱们社会主义的正能量，好思想。
 
-login submit 提交了登陆功能的所有代码：包括了token校验，导航守卫等。
