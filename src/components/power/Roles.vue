@@ -195,11 +195,11 @@ export default {
     //   获取角色列表
     async getRolesList() {
       const { data: res } = await this.$http.get("roles");
-      console.log("角色列表", res);
+      // console.log("角色列表", res);
       if (res.meta.status !== 200)
         return this.$message.error("请求角色列表失败");
       this.rolesList = res.data;
-      console.log(this.rolesList);
+      // console.log(this.rolesList);
     },
     // 角色添加框
     rolesAddClosed() {
@@ -212,7 +212,7 @@ export default {
     rolesAdd() {
       //发送添加用户请求
       this.$refs.rolesAddRef.validate(async valid => {
-        console.log(valid);
+        // console.log(valid);
         if (!valid) return;
         // 通过预校验 可以发起真正的添加请求
         const { data: res } = await this.$http.post("roles", this.rolesAddForm);
@@ -223,7 +223,7 @@ export default {
         this.getRolesList();
         // 提示修改成功
         this.$message.success("添加成功！");
-        console.log(res);
+        // console.log(res);
       });
     },
     // 展示编辑角色对话框
@@ -233,12 +233,12 @@ export default {
       if (res.meta.status != 200)
         return this.$message.error("查询角色信息失败");
       this.editRolesForm = res.data;
-      console.log(res);
+      // console.log(res);
     },
     // 发送编辑角色
     editAdd() {
       this.$refs.editRolesFormRef.validate(async valid => {
-        console.log("valid", valid);
+        // console.log("valid", valid);
         if (!valid) return;
         // 通过预校验 可以发起真正的添加请求
         const { data: res } = await this.$http.put(
@@ -250,7 +250,7 @@ export default {
         );
         if (res.meta.status !== 200)
           return this.$message.error("修改用户信息失败");
-        console.log(res);
+        // console.log(res);
         // 关闭对话框
         this.EditRolesVisible = false;
         // 刷新数据
@@ -273,7 +273,7 @@ export default {
       if (result !== "confirm") return this.$message.info("已经取消删除");
       const { data: res } = await this.$http.delete("roles/" + id);
 
-      console.log(res);
+      // console.log(res);
       if (res.meta.status !== 200) return this.$message.error("删除角色失败！");
       this.$message.success("删除角色成功!");
       // 刷新数据
@@ -296,7 +296,7 @@ export default {
         "roles/" + data.id + "/rights/" + id
       );
 
-      console.log(res);
+      // console.log(res);
       if (res.meta.status !== 200) return this.$message.error("删除权限失败！");
       this.$message.success("删除权限成功!");
       // 刷新数据
@@ -311,7 +311,7 @@ export default {
       if (res.meta.status != 200)
         return this.$message.error("查询权限信息失败");
       this.rightsList = res.data;
-      console.log(this.rightsList);
+      // console.log(this.rightsList);
       //   获取三级节点
       this.getLeafKeys(data, this.defKeys);
       this.setRightVisible = true;
@@ -336,7 +336,7 @@ export default {
         ...this.$refs.treeRef.getHalfCheckedKeys()
       ];
       const idStr = keys.join(",");
-      console.log(idStr);
+      // console.log(idStr);
       const { data: res } = await this.$http.post(
         "roles/" + this.roleId + "/rights",
         { rids: idStr }

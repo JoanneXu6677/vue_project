@@ -40,7 +40,7 @@ export default {
       if (res.meta.status !== 200)
         return this.$message.error("请求权限列表失败");
       this.rightsList = res.data;
-      console.log(res);
+      // console.log(res);
     }
   }
 };

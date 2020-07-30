@@ -387,9 +387,6 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-.el-card {
-  margin-top: 20px;
-}
 .userAdd {
   margin-top: 15px;
 }
@@ -415,5 +412,8 @@ export default {
 .el-pager li:hover {
   color: #dc143c !important;
   cursor: default;
+}
+.el-card {
+  margin-top: 20px;
 }
 </style>>

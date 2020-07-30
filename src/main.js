@@ -4,8 +4,11 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import '../src/assets/css/global.css'
+import TreeTable from 'vue-table-with-tree-grid'
 
-//挂载
+// 树形组件注册
+Vue.component('tree-table', TreeTable)
+    //挂载
 import axios from 'axios'
 axios.interceptors.request.use(config => {
     // 为请求头添加token验证的authorization字段
